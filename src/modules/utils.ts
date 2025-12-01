@@ -26,18 +26,21 @@ export const resolveImage = (imagePath: string | null | undefined): string | nul
   if (!imagePath) return null
   if (imagePath.startsWith('http')) return imagePath
 
-  // For cover images (image-cover/..., uploads-cover-2/...)
-  if (imagePath.startsWith('image-cover/') || imagePath.startsWith('uploads-cover')) {
-    return `${COVER_BASE_URL}/${imagePath}`
+  // Normalize path - remove leading slash
+  const normalizedPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath
+
+  // For cover images (image-cover/..., uploads-cover/..., uploads-cover-2/...)
+  if (normalizedPath.startsWith('image-cover/') || normalizedPath.startsWith('uploads-cover')) {
+    return `${COVER_BASE_URL}/${normalizedPath}`
   }
 
   // For chapter images - need /softkomik/ prefix
   // Patterns: NodeJs/new-nodeJs/..., img-file/...
-  if (imagePath.startsWith('NodeJs/') || imagePath.startsWith('img-file/')) {
-    return `${IMAGE_BASE_URL}/softkomik/${imagePath}`
+  if (normalizedPath.startsWith('NodeJs/') || normalizedPath.startsWith('img-file/')) {
+    return `${IMAGE_BASE_URL}/softkomik/${normalizedPath}`
   }
 
-  return `${IMAGE_BASE_URL}/${imagePath}`
+  return `${IMAGE_BASE_URL}/${normalizedPath}`
 }
 
 /**

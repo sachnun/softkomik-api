@@ -5,21 +5,31 @@ REST API for scraping comic data from softkomik.com. Built with Hono on Cloudfla
 ## Requirements
 
 - Node.js 18+
-- Cloudflare account (for deployment)
+- Cloudflare account
 
-## Build & Run
+## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Development
 npm run dev
-# Server runs at http://localhost:8787
-
-# Deploy to Cloudflare Workers
-npm run deploy
 ```
+
+Server runs at http://localhost:8787
+
+## Deploy to Cloudflare Workers
+
+1. Install Wrangler CLI and login:
+   ```bash
+   npm install -g wrangler
+   wrangler login
+   ```
+
+2. Deploy:
+   ```bash
+   npm run deploy
+   ```
+
+3. Worker will be live at: `https://softkomik-api.<username>.workers.dev`
 
 ## API Documentation
 

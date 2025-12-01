@@ -1,5 +1,7 @@
 # Softkomik API
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/sachnun/softkomik-api)
+
 REST API for scraping comic data from softkomik.com. Built with Hono on Cloudflare Workers.
 
 ## Requirements

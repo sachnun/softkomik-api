@@ -1,5 +1,6 @@
 export const BASE_URL = 'https://softkomik.com'
 export const IMAGE_BASE_URL = 'https://image.softkomik.com'
+export const COVER_BASE_URL = 'https://cover.softkomik.com/softkomik-cover'
 
 export const GENRES = [
   'Action',

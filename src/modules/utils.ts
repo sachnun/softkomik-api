@@ -1,5 +1,5 @@
 import { load } from 'cheerio'
-import { BASE_URL, IMAGE_BASE_URL } from './constants'
+import { BASE_URL, IMAGE_BASE_URL, COVER_BASE_URL } from './constants'
 import type { ComicListing, RawComicItem } from './types'
 
 /**
@@ -28,7 +28,7 @@ export const resolveImage = (imagePath: string | null | undefined): string | nul
 
   // For cover images (image-cover/...)
   if (imagePath.startsWith('image-cover/')) {
-    return `${IMAGE_BASE_URL}/${imagePath}`
+    return `${COVER_BASE_URL}/${imagePath}`
   }
 
   // For chapter images - need /softkomik/ prefix

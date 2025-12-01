@@ -10,7 +10,7 @@ import {
   scrapeByType,
   scrapeByGenre,
   getGenres
-} from './modules/scraper'
+} from './modules'
 
 const app = new Hono()
 

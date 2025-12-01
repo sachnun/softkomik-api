@@ -26,8 +26,8 @@ export const resolveImage = (imagePath: string | null | undefined): string | nul
   if (!imagePath) return null
   if (imagePath.startsWith('http')) return imagePath
 
-  // For cover images (image-cover/...)
-  if (imagePath.startsWith('image-cover/')) {
+  // For cover images (image-cover/..., uploads-cover-2/...)
+  if (imagePath.startsWith('image-cover/') || imagePath.startsWith('uploads-cover')) {
     return `${COVER_BASE_URL}/${imagePath}`
   }
 

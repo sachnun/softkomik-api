@@ -20,10 +20,9 @@ Server runs at http://localhost:8787
 
 ## Deploy to Cloudflare Workers
 
-1. Install Wrangler CLI and login:
+1. Login to Cloudflare:
    ```bash
-   npm install -g wrangler
-   wrangler login
+   npx wrangler login
    ```
 
 2. Deploy:
